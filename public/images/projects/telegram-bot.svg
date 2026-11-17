@@ -1,0 +1,53 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="24" fill="#0B1117"/>
+  <rect x="0.5" y="0.5" width="1199" height="719" rx="23.5" stroke="#1F2937"/>
+  <radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 180) rotate(45) scale(620)">
+    <stop stop-color="#38BDF8" stop-opacity="0.24"/>
+    <stop offset="1" stop-color="#0B1117" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="720" rx="24" fill="url(#g2)"/>
+
+  <!-- Chat Phone Frame -->
+  <rect x="130" y="72" width="430" height="576" rx="28" fill="#111827" stroke="#2A3649" stroke-width="2"/>
+  <rect x="130" y="72" width="430" height="72" rx="28" fill="#162133"/>
+  <circle cx="182" cy="108" r="18" fill="#38BDF8" fill-opacity="0.2" stroke="#38BDF8"/>
+  <text x="214" y="104" fill="#F9FAFB" font-family="sans-serif" font-size="16" font-weight="700">@Maroa_assistant_bot</text>
+  <text x="214" y="124" fill="#34D399" font-family="monospace" font-size="12">● Python Bot • online 24/7</text>
+
+  <!-- Bot Message -->
+  <rect x="158" y="172" width="340" height="92" rx="14" fill="#1E293B"/>
+  <text x="178" y="200" fill="#F3F4F6" font-family="sans-serif" font-size="14">Hi! 👋 I&apos;m Brian Maroa&apos;s assistant.</text>
+  <text x="178" y="222" fill="#9CA3AF" font-family="sans-serif" font-size="13">Ask me anything about Brian&apos;s work</text>
+  <text x="178" y="244" fill="#9CA3AF" font-family="sans-serif" font-size="13">or pick a quick option below:</text>
+
+  <!-- Inline Keyboard Buttons -->
+  <rect x="158" y="276" width="164" height="42" rx="10" fill="#38BDF8" fill-opacity="0.18" stroke="#38BDF8"/>
+  <text x="240" y="302" fill="#E0F2FE" font-family="sans-serif" font-size="13" font-weight="600" text-anchor="middle">🚀 View Projects</text>
+  <rect x="332" y="276" width="166" height="42" rx="10" fill="#1E293B" stroke="#334155"/>
+  <text x="415" y="302" fill="#CBD5E1" font-family="sans-serif" font-size="13" font-weight="600" text-anchor="middle">🛠 Skills &amp; CV</text>
+
+  <!-- User Selection -->
+  <rect x="278" y="346" width="254" height="44" rx="14" fill="#059669"/>
+  <text x="405" y="373" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="600" text-anchor="middle">Tell me about Brian&apos;s stack</text>
+
+  <!-- Bot Reply -->
+  <rect x="158" y="416" width="340" height="114" rx="14" fill="#1E293B" stroke="#10B981" stroke-opacity="0.5"/>
+  <text x="178" y="446" fill="#34D399" font-family="sans-serif" font-size="14" font-weight="700">✓ Full-Stack &amp; Automation</text>
+  <text x="178" y="472" fill="#CBD5E1" font-family="sans-serif" font-size="13">React, Next.js, PHP, Supabase/SQL</text>
+  <text x="178" y="496" fill="#CBD5E1" font-family="sans-serif" font-size="13">Python Bots &amp; Docker n8n Workflows</text>
+
+  <!-- Right Side: Python Architecture -->
+  <rect x="620" y="130" width="450" height="140" rx="18" fill="#111827" stroke="#263142"/>
+  <text x="652" y="172" fill="#38BDF8" font-family="monospace" font-size="13">BUILT WITH PYTHON</text>
+  <text x="652" y="206" fill="#F9FAFB" font-family="sans-serif" font-size="22" font-weight="700">Personal Portfolio Assistant</text>
+  <text x="652" y="236" fill="#9CA3AF" font-family="sans-serif" font-size="14">Answers recruiter &amp; client questions 24/7</text>
+
+  <rect x="620" y="300" width="450" height="140" rx="18" fill="#111827" stroke="#263142"/>
+  <text x="652" y="342" fill="#34D399" font-family="monospace" font-size="13">INTERACTIVE MENUS</text>
+  <text x="652" y="376" fill="#F9FAFB" font-family="sans-serif" font-size="22" font-weight="700">&lt; 1 Second Responses</text>
+  <text x="652" y="406" fill="#9CA3AF" font-family="sans-serif" font-size="14">Instant bio, projects, CV &amp; contact links</text>
+
+  <rect x="620" y="470" width="450" height="118" rx="18" fill="#111827" stroke="#10B981" stroke-opacity="0.4"/>
+  <text x="652" y="516" fill="#F9FAFB" font-family="sans-serif" font-size="20" font-weight="700">Direct Contact Handoff</text>
+  <text x="652" y="548" fill="#9CA3AF" font-family="sans-serif" font-size="14">1-tap WhatsApp, email &amp; LinkedIn links</text>
+</svg>

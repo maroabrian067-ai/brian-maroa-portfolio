@@ -1,0 +1,61 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="24" fill="#0B1117"/>
+  <rect x="0.5" y="0.5" width="1199" height="719" rx="23.5" stroke="#1F2937"/>
+  <radialGradient id="g4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 360) rotate(90) scale(480 720)">
+    <stop stop-color="#10B981" stop-opacity="0.18"/>
+    <stop offset="1" stop-color="#0B1117" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="720" rx="24" fill="url(#g4)"/>
+
+  <!-- Subtle n8n Canvas Grid -->
+  <text x="72" y="88" fill="#34D399" font-family="monospace" font-size="14">N8N WORKFLOW • MEETING_TO_CALENDAR_V2</text>
+  <text x="72" y="124" fill="#F9FAFB" font-family="sans-serif" font-size="28" font-weight="700">Unstructured Message → Google Calendar Invite</text>
+
+  <!-- Node Connectors -->
+  <path d="M290 320 C330 320, 330 320, 370 320" stroke="#10B981" stroke-width="3"/>
+  <path d="M590 320 C630 320, 630 320, 670 320" stroke="#10B981" stroke-width="3"/>
+  <path d="M890 320 C930 320, 930 320, 970 320" stroke="#10B981" stroke-width="3"/>
+
+  <!-- Node 1 -->
+  <rect x="70" y="230" width="220" height="180" rx="18" fill="#111827" stroke="#38BDF8"/>
+  <rect x="90" y="252" width="44" height="44" rx="12" fill="#38BDF8" fill-opacity="0.18"/>
+  <text x="112" y="280" fill="#38BDF8" font-family="sans-serif" font-size="20" text-anchor="middle">✉</text>
+  <text x="90" y="330" fill="#F9FAFB" font-family="sans-serif" font-size="18" font-weight="700">1. Trigger</text>
+  <text x="90" y="356" fill="#9CA3AF" font-family="sans-serif" font-size="13">Gmail / Webhook</text>
+  <text x="90" y="380" fill="#38BDF8" font-family="monospace" font-size="12">"Let's meet Thu 3pm"</text>
+
+  <!-- Node 2 -->
+  <rect x="370" y="230" width="220" height="180" rx="18" fill="#111827" stroke="#A855F7"/>
+  <rect x="390" y="252" width="44" height="44" rx="12" fill="#A855F7" fill-opacity="0.18"/>
+  <text x="412" y="280" fill="#C084FC" font-family="sans-serif" font-size="18" text-anchor="middle">AI</text>
+  <text x="390" y="330" fill="#F9FAFB" font-family="sans-serif" font-size="18" font-weight="700">2. JSON Parser</text>
+  <text x="390" y="356" fill="#9CA3AF" font-family="sans-serif" font-size="13">Extract ISO &amp; Guests</text>
+  <text x="390" y="380" fill="#C084FC" font-family="monospace" font-size="12">Africa/Nairobi TZ</text>
+
+  <!-- Node 3 -->
+  <rect x="670" y="230" width="220" height="180" rx="18" fill="#111827" stroke="#F59E0B"/>
+  <rect x="690" y="252" width="44" height="44" rx="12" fill="#F59E0B" fill-opacity="0.18"/>
+  <text x="712" y="280" fill="#FBBF24" font-family="sans-serif" font-size="18" text-anchor="middle">✓</text>
+  <text x="690" y="330" fill="#F9FAFB" font-family="sans-serif" font-size="18" font-weight="700">3. Free/Busy</text>
+  <text x="690" y="356" fill="#9CA3AF" font-family="sans-serif" font-size="13">Conflict Check API</text>
+  <text x="690" y="380" fill="#FBBF24" font-family="monospace" font-size="12">0 Double Bookings</text>
+
+  <!-- Node 4 -->
+  <rect x="970" y="230" width="160" height="180" rx="18" fill="#111827" stroke="#10B981" stroke-width="2"/>
+  <rect x="990" y="252" width="44" height="44" rx="12" fill="#10B981" fill-opacity="0.2"/>
+  <text x="1012" y="280" fill="#34D399" font-family="sans-serif" font-size="18" text-anchor="middle">📅</text>
+  <text x="990" y="330" fill="#F9FAFB" font-family="sans-serif" font-size="18" font-weight="700">4. Calendar</text>
+  <text x="990" y="356" fill="#9CA3AF" font-family="sans-serif" font-size="13">+ Meet Link</text>
+  <text x="990" y="380" fill="#34D399" font-family="monospace" font-size="12">&lt; 4 sec</text>
+
+  <!-- Bottom Metrics Bar -->
+  <rect x="70" y="486" width="1060" height="128" rx="18" fill="#111827" stroke="#263142"/>
+  <text x="120" y="542" fill="#34D399" font-family="sans-serif" font-size="32" font-weight="700">6+ hrs/wk saved</text>
+  <text x="120" y="576" fill="#9CA3AF" font-family="sans-serif" font-size="14">Zero manual invite creation</text>
+
+  <text x="510" y="542" fill="#F9FAFB" font-family="sans-serif" font-size="32" font-weight="700">100% structured</text>
+  <text x="510" y="576" fill="#9CA3AF" font-family="sans-serif" font-size="14">Agenda, attendees &amp; Meet link included</text>
+
+  <text x="880" y="542" fill="#FBBF24" font-family="sans-serif" font-size="32" font-weight="700">3.8s execution</text>
+  <text x="880" y="576" fill="#9CA3AF" font-family="sans-serif" font-size="14">Instant Telegram/email confirmation</text>
+</svg>
