@@ -92,8 +92,10 @@ export function About() {
 
                 <div className="pt-3">
                   <a
-                    href={PROFILE.cvPath}
+                    href="/api/download-cv"
                     download="Brian-Maroa-CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--text-primary)] px-4 py-3 text-sm font-semibold text-[var(--bg-primary)] transition-opacity hover:opacity-90"
                   >
                     <Download className="h-4 w-4" />
