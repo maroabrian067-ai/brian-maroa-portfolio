@@ -1,125 +1,131 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowDownRight, ChevronDown, MapPin, MessageCircle } from "lucide-react";
+import { AnimatePresence, m } from "framer-motion";
+import { ChevronDown, MessageCircle } from "lucide-react";
 import { PROFILE, getWhatsAppUrl } from "@/data/projects";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+
+const ROLES = [
+  "Web & Bot Developer",
+  "Automation Engineer",
+  "Full-Stack Developer",
+];
 
 export function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % ROLES.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="hero"
-      className="relative min-h-[88vh] overflow-hidden border-b border-[var(--border-subtle)]"
+      className="relative flex min-h-[calc(100vh-4rem)] w-full items-center justify-center overflow-hidden border-b border-[var(--border-subtle)] bg-[var(--bg-primary)]"
     >
-      {/* Subtle Portrait & Radial Vignette Background (desktop editorial feel) */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="hero-mesh absolute inset-0" />
-        <div className="absolute inset-y-0 left-1/2 hidden w-[42rem] -translate-x-1/2 opacity-20 dark:opacity-25 lg:block">
-          <Image
-            src="/images/brian-maroa.jpg"
-            alt=""
-            fill
-            priority
-            sizes="672px"
-            className="object-cover object-top grayscale contrast-125"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/60 to-[var(--bg-primary)]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)] via-transparent to-[var(--bg-primary)]" />
-        </div>
+      {/* Background Ambient Glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center"
+      >
+        <div className="h-[480px] w-[480px] rounded-full bg-emerald-500/10 blur-[120px]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-between px-4 pb-10 pt-16 sm:px-6 sm:pt-24 lg:px-8">
-        {/* Top Meta Pills */}
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 font-mono text-xs font-medium text-emerald-600 dark:text-emerald-400">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:hidden" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col justify-between px-4 py-12 sm:px-6 lg:px-8">
+        {/* Main 3-Column / Editorial Grid */}
+        <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-4">
+          {/* Left Column: Cycling Role Title */}
+          <div className="order-2 lg:order-1 lg:col-span-4 lg:pr-4">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--text-muted)]">
+              Brian Maroa
             </span>
-            {PROFILE.availability}
-          </span>
-
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3.5 py-1.5 font-mono text-xs text-[var(--text-secondary)]">
-            <MapPin className="h-3.5 w-3.5 text-[var(--accent)]" />
-            {PROFILE.location}
-          </span>
-        </div>
-
-        {/* Editorial Split Hero (inspired by modern dark developer portfolios) */}
-        <div className="my-auto grid items-center gap-10 py-10 lg:grid-cols-12 lg:gap-12">
-          {/* Left: Bold Title & Accent Bar */}
-          <div className="lg:col-span-6">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--text-muted)]">
-              {PROFILE.name}
+            <div className="relative mt-2 h-[4.5rem] sm:h-[5.5rem] lg:h-[7rem]">
+              <AnimatePresence mode="wait">
+                <m.h1
+                  key={roleIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.45, ease: "easeOut" }}
+                  className="font-display text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08]"
+                >
+                  {ROLES[roleIndex]}
+                </m.h1>
+              </AnimatePresence>
+            </div>
+            <p className="mt-3 font-mono text-xs text-emerald-500 dark:text-emerald-400">
+              ● {PROFILE.availability}
             </p>
-            <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-[3.5rem] lg:leading-[1.06]">
-              Websites, Bots &amp;{" "}
-              <span className="text-emerald-600 dark:text-emerald-400">
-                Automations
-              </span>
-            </h1>
-            <div className="mt-5 h-1 w-16 rounded-full bg-emerald-500" />
           </div>
 
-          {/* Right: Introduction & Dual CTAs */}
-          <div className="lg:col-span-6">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--accent)]">
-              Introduction
+          {/* Center Column: Prominent Portrait (Video center-stage aesthetic) */}
+          <div className="order-1 flex justify-center lg:order-2 lg:col-span-4">
+            <div className="relative aspect-[3/4] w-64 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] shadow-2xl sm:w-72 lg:w-80">
+              <Image
+                src="/images/brian-maroa.jpg"
+                alt="Brian Maroa"
+                fill
+                priority
+                sizes="(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
+                className="object-cover object-top filter contrast-[1.08]"
+              />
+              {/* Subtle vignette fade at edges matching video */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)]/80 via-transparent to-transparent" />
+            </div>
+          </div>
+
+          {/* Right Column: — INTRODUCTION */}
+          <div className="order-3 lg:order-3 lg:col-span-4 lg:pl-4">
+            <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
+              <span>—</span>
+              <span>Introduction</span>
+            </div>
+            <p className="mt-3 font-display text-lg font-semibold leading-snug text-[var(--text-primary)] sm:text-xl">
+              I build websites, bots and automations that save businesses time and
+              win them customers.
             </p>
-            <p className="mt-3 font-display text-xl font-medium leading-snug text-[var(--text-primary)] sm:text-2xl">
-              {PROFILE.headline}
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
-              {PROFILE.subline}
+            <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
+              From database-driven React &amp; Supabase sites to Python Telegram
+              assistants and self-hosted n8n workflows connecting email and calendar.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <MagneticButton>
-                <a
-                  href={getWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 rounded-xl bg-emerald-500 px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400 sm:text-base"
-                >
-                  <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
-                  <span>Let&apos;s work together</span>
-                </a>
-              </MagneticButton>
-
-              <MagneticButton strength={0.14}>
-                <a
-                  href="#work"
-                  className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-strong)] bg-[var(--bg-elevated)] px-6 py-3.5 text-sm font-semibold text-[var(--text-primary)] transition-colors hover:border-[var(--accent)] sm:text-base"
-                >
-                  <span>View my work</span>
-                  <ArrowDownRight className="h-4 w-4 text-[var(--accent)]" />
-                </a>
-              </MagneticButton>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-slate-950 shadow-md shadow-emerald-500/20 transition-all hover:bg-emerald-400"
+              >
+                <MessageCircle className="h-4 w-4" />
+                <span>Let&apos;s talk</span>
+              </a>
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-strong)] bg-[var(--bg-elevated)] px-4 py-2.5 text-sm font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--accent)]"
+              >
+                <span>View projects</span>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Metrics + Scroll Cue */}
-        <div className="flex flex-col justify-between gap-6 border-t border-[var(--border-subtle)] pt-6 sm:flex-row sm:items-center">
-          <div className="grid grid-cols-3 gap-6 sm:gap-10">
-            {PROFILE.heroStats.map((stat) => (
-              <div key={stat.label}>
-                <div className="font-display text-xl font-bold text-[var(--text-primary)] sm:text-2xl">
-                  {stat.value}
-                </div>
-                <div className="font-mono text-[11px] uppercase tracking-wider text-[var(--text-muted)]">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
+        {/* Bottom Center: SCROLL Indicator (Exact to video inspo) */}
+        <div className="mt-10 flex flex-col items-center justify-center">
           <a
             href="#about"
-            className="hidden items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-[var(--text-muted)] transition-colors hover:text-[var(--accent)] sm:inline-flex"
+            className="group flex flex-col items-center gap-1 font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
           >
             <span>Scroll</span>
-            <ChevronDown className="h-3.5 w-3.5" />
+            <m.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ChevronDown className="h-4 w-4" />
+            </m.div>
           </a>
         </div>
       </div>
