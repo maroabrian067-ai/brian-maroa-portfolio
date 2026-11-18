@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brianmaroa.dev/sitemap.xml
+Sitemap: https://brian-maroa-portfolio.vercel.app/sitemap.xml

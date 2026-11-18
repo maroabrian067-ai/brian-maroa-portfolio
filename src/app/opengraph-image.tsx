@@ -80,7 +80,7 @@ export default function OpenGraphImage() {
             color: "#34D399",
           }}
         >
-          <span>brianmaroa.dev</span>
+          <span>brian-maroa-portfolio.vercel.app</span>
           <span>120+ hrs saved / mo • &lt; 5s bot response</span>
         </div>
       </div>
